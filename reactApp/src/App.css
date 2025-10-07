@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to top, #480d5d, #ff8c00);
+  font-family: 'Creepster';
+  font-size: 1.5em;
+}
+
+button {
+  background-color: rgba(26, 26, 26, 0.2);
+  font-family: 'Creepster';
+  transition: border-color 0.25s, background-color 0.25s;
+}
+
+button:hover {
+  background-color: rgba(26, 26, 26, 0.5);
+  box-shadow: 0 0 15px #ff6f61;
+}
+
+button:focus,
+button:focus-visible {
+  outline: none;
+}
+
+h1{
+  font-family: 'Creepster';
+}
+
+.ghost-image {
+  width: 100px;
+  height: auto;
+  opacity: .7;
+  animation: 
+    float 3s ease-in-out infinite,
+    fly-across 10s ease-in-out infinite alternate;
+  position: absolute; 
+  top: 10%;
+  left: 10%;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fly-across {
+  0% {
+    transform: translateX(0vw); 
+  }
+  20% {
+    transform: translateX(25vw) translateY(15vh) rotate(10deg);
+  }
+  50% {
+    transform: translateX(55vw) translateY(5vh) rotate(-10deg);
+  }
+  80% {
+    transform: translateX(85vw) translateY(20vh) rotate(5deg);
+  }
+  100% {
+    transform: translateX(110vw) translateY(10vh);
+  }
+}
